@@ -25,3 +25,18 @@ const movingCursor = document.getElementById('moving-cursor');
 window.addEventListener('mousemove', (e) => {
     limbSystem.update(e.clientX, e.clientY);
 });
+
+function render() {
+    movingCursor.innerHTML = '';
+    limbSystem.nodes.forEach((node, index) => {
+        const segment = document.createElement('div');
+        segment.className = 'segment';
+        segment.style.left = node.x + 'px';
+        segment.style.top = node.y + 'px';
+        segment.style.opacity = 1 - index * 0.1;
+        movingCursor.appendChild(segment);
+    });
+    requestAnimationFrame(render);
+}
+
+render();
