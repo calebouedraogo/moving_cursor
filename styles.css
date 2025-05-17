@@ -12,5 +12,20 @@ body {
 
 h1 {
     position: absolute;
-    top: 20;
+    top: 20px;
+}
+
+#moving-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.segment {
+    width: 10px;
+    height: 10px;
+    background-color: crimson;
+    border-radius: 50%;
+    position: absolute;
 }
