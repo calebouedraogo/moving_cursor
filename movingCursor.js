@@ -21,3 +21,7 @@ class LimbSystem {
 
 const limbSystem = new LimbSystem(10, 0.2);
 const movingCursor = document.getElementById('moving-cursor');
+
+window.addEventListener('mousemove', (e) => {
+    limbSystem.update(e.clientX, e.clientY);
+});
